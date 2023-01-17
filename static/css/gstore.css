@@ -47,8 +47,32 @@
 }
 .navbar_section .nav-link{
     font-size: 1.1033rem;
-    color: bisque;
+    color: #fdf3e6;
 }
+.navbar_section .nav-link:focus, .navbar_section .nav-link:active:focus, .navbar_section .nav-link.active:focus{
+    color: #fdf3e6;
+}
+.search_input{
+    background: #343a40;
+    color: #e4e7eb;
+}
+.search_input:focus, .search_input:active:focus, .search_input.active:focus{
+    background: #343a40;
+    color: #e4e7eb;
+}
+.nav_logo{
+    font-size: 1.7rem;
+    font-weight: 600;
+    letter-spacing: 0.2rem;
+    color: #bfb0ff;
+}
+.nav_logo:hover{
+    color: #bfb0ff;
+}
+.nav_logo:focus, .nav_logo:active:focus, .nav_logo.active:focus{
+    color: #bfb0ff;
+}
+
 .carousel_img{
     width: 100%;
     height: 90vh;

@@ -35,13 +35,38 @@
 <div class="container-fluid px-0 mx-0 mt-5">
     <div class="container col-lg-11">
         <div class="row">
-            <h4 class="text text-secondary fw-bold mb-3">Explore Our Products</h4>
-            <div class="col-lg-4">
+            <h4 class="text text-secondary fw-bold mb-3">Shop By Our Popular Category</h4>
+            <div class="col-lg-4 mb-3">
                 <div class="p-0 shadow-sm border">
                     <div class="category_info_box">
-                        <img src="https://source.unsplash.com/random?pants" alt="Clothes Collection" class="category_img">
+                        <img src="https://source.unsplash.com/random?clothes" alt="Clothes Collection"
+                            class="category_img">
                         <div class="category_data">
                             <h4 class="text text-dark fw-bold mb-3">Clothing Collection</h4>
+                            <a href="#" class="btn btn-primary px-4">Explore More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 mb-3">
+                <div class="p-0 shadow-sm border">
+                    <div class="category_info_box">
+                        <img src="https://source.unsplash.com/random?mobiles&laptops" alt="Clothes Collection"
+                            class="category_img">
+                        <div class="category_data">
+                            <h4 class="text text-dark fw-bold mb-3">Electronics Collection</h4>
+                            <a href="#" class="btn btn-primary px-4">Explore More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 mb-3">
+                <div class="p-0 shadow-sm border">
+                    <div class="category_info_box">
+                        <img src="https://source.unsplash.com/random?bags" alt="Clothes Collection"
+                            class="category_img">
+                        <div class="category_data">
+                            <h4 class="text text-dark fw-bold mb-3">Bags Collection</h4>
                             <a href="#" class="btn btn-primary px-4">Explore More</a>
                         </div>
                     </div>
@@ -51,69 +76,207 @@
     </div>
 </div>
 
+<div class="container-fluid px-0 mx-0 py-2">
+    <div class="container col-lg-11">
+        <hr class="bg-secondary">
+    </div>
+</div>
 
-<div class="container col-lg-11 mt-5">
-    <div class="row">
-        <h4 class="text text-secondary fw-bold mb-3">Explore Our Products</h4>
-        {% for product in product_list %}
-        <div class="col-md-3 mb-4">
-            <div class="p-0 shadow-sm border">
-                <img src="{{ product.image.url }}" class="img-fluid product_img" alt="">
-                <div class="info py-3 px-3">
-                    <a href="{% url 'ecomapp:productdetail' product.slug %}" class="text-decoration-none">
-                        <h5 class="text text-dark fw-bold">{{ product.title }}</h5>
-                    </a>
-                    <p class="text"><s class="text-muted me-3">Rs. {{ product.marked_price }}
-                        </s> Rs. {{ product.selling_price }}</p>
-                    <div class="d-flex justify-content-between align-items-center">
-                        <a href="{% url 'ecomapp:addtocart' product.id %}" class="btn btn-sm btn-primary px-3">
-                            Add to Cart
+<!-- Our Products Section -->
+<div class="container-fluid px-0 mx-0">
+    <div class="container col-lg-11">
+        <div class="row">
+            <h4 class="text text-secondary fw-bold mb-3">Explore Our Products</h4>
+            {% for product in product_list %}
+            <div class="col-md-3 mb-4">
+                <div class="p-0 shadow-sm border">
+                    <img src="{{ product.image.url }}" class="img-fluid product_img" alt="">
+                    <div class="info py-3 px-3">
+                        <a href="{% url 'ecomapp:productdetail' product.slug %}" class="text-decoration-none">
+                            <h5 class="text text-dark fw-bold">{{ product.title }}</h5>
                         </a>
-                        <a href="#" class="btn btn-sm btn-outline-primary px-3">
-                            <i class="fa-regular fa-heart"></i>
+                        <p class="text"><s class="text-muted me-3">Rs. {{ product.marked_price }}
+                            </s> Rs. {{ product.selling_price }}</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <a href="{% url 'ecomapp:addtocart' product.id %}" class="btn btn-sm btn-primary px-2">
+                                <i class="fa-solid fa-cart-plus me-2"></i> Add to Cart
+                            </a>
+                            <a href="#" class="btn btn-sm btn-outline-primary px-3">
+                                <i class="fa-regular fa-heart"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        <div class="d-flex justify-content-center align-items-center mb-3">
+            <nav aria-label="...">
+                <ul class="pagination">
+                    {% if product_list.has_previous %}
+                    <li class="page-item">
+                        <a class="page-link" href="?page={{ product_list.previous_page_number }}">Previous</a>
+                    </li>
+                    {% else %}
+                    <li></li>
+                    <!-- <li class="page-item disabled">
+                        <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a>
+                    </li> -->
+                    {% endif %}
+                    {% for i in product_list.paginator.page_range %}
+                    {% if i == product_list.number %}
+                    <li class="page-item active" aria-current="page">
+                        <a class="page-link">{{i}}</a>
+                    </li>
+                    {% else %}
+                    <li class="page-item" aria-current="page">
+                        <a class="page-link" href="?page={{ i }}">{{i}}</a>
+                    </li>
+                    {% endif %}
+                    {% endfor %}
+                    {% if product_list.has_next %}
+                    <li class="page-item">
+                        <a class="page-link" href="?page={{ product_list.next_page_number }}">Next</a>
+                    </li>
+                    {% else %}
+                    <li></li>
+                    <!-- <li class="page-item disabled">
+                        <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a>
+                    </li> -->
+                    {% endif %}
+                </ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+<!-- Trending Products Section -->
+<div class="container-fluid px-0 mx-0 bg-light mb-0 pb-0">
+    <div class="container col-lg-11 py-4">
+        <div class="row">
+            <h4 class="text text-secondary fw-bold mb-3">Our Trending Products</h4>
+            <div class="col-lg-3 mb-3">
+                <div class="p-0 shadow-sm border">
+                    <img src="https://source.unsplash.com/random?mobiles" class="img-fluid product_img" alt="">
+                    <div class="info py-3 px-3">
+                        <a href="#" class="text-decoration-none">
+                            <h5 class="text text-dark fw-bold">Mobile Product</h5>
+                        </a>
+                        <h6 class="text text-secondary mb-3"> Rs. 10000</h6>
+                        <a href="$" class="btn btn-sm btn-primary w-100">
+                            View Detail
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 mb-3">
+                <div class="p-0 shadow-sm border">
+                    <img src="https://source.unsplash.com/random?shoes" class="img-fluid product_img" alt="">
+                    <div class="info py-3 px-3">
+                        <a href="#" class="text-decoration-none">
+                            <h5 class="text text-dark fw-bold">Shoes Product</h5>
+                        </a>
+                        <h6 class="text text-secondary mb-3"> Rs. 15000</h6>
+                        <a href="$" class="btn btn-sm btn-primary w-100">
+                            View Detail
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 mb-3">
+                <div class="p-0 shadow-sm border">
+                    <img src="https://source.unsplash.com/random?blazers" class="img-fluid product_img" alt="">
+                    <div class="info py-3 px-3">
+                        <a href="#" class="text-decoration-none">
+                            <h5 class="text text-dark fw-bold">Blazers Product</h5>
+                        </a>
+                        <h6 class="text text-secondary mb-3"> Rs. 8000</h6>
+                        <a href="$" class="btn btn-sm btn-primary w-100">
+                            View Detail
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 mb-3">
+                <div class="p-0 shadow-sm border">
+                    <img src="https://source.unsplash.com/random?coat" class="img-fluid product_img" alt="">
+                    <div class="info py-3 px-3">
+                        <a href="#" class="text-decoration-none">
+                            <h5 class="text text-dark fw-bold">Coat Product</h5>
+                        </a>
+                        <h6 class="text text-secondary mb-3"> Rs. 9000</h6>
+                        <a href="$" class="btn btn-sm btn-primary w-100">
+                            View Detail
                         </a>
                     </div>
                 </div>
             </div>
         </div>
-        {% endfor %}
     </div>
-    <div class="d-flex justify-content-center align-items-center">
-        <nav aria-label="...">
-            <ul class="pagination">
-                {% if product_list.has_previous %}
-                <li class="page-item">
-                    <a class="page-link" href="?page={{ product_list.previous_page_number }}">Previous</a>
-                </li>
-                {% else %}
-                <li></li>
-                <!-- <li class="page-item disabled">
-                    <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a>
-                </li> -->
-                {% endif %}
-                {% for i in product_list.paginator.page_range %}
-                {% if i == product_list.number %}
-                <li class="page-item active" aria-current="page">
-                    <a class="page-link">{{i}}</a>
-                </li>
-                {% else %}
-                <li class="page-item" aria-current="page">
-                    <a class="page-link" href="?page={{ i }}">{{i}}</a>
-                </li>
-                {% endif %}
-                {% endfor %}
-                {% if product_list.has_next %}
-                <li class="page-item">
-                    <a class="page-link" href="?page={{ product_list.next_page_number }}">Next</a>
-                </li>
-                {% else %}
-                <li></li>
-                <!-- <li class="page-item disabled">
-                    <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a>
-                </li> -->
-                {% endif %}
-            </ul>
-        </nav>
+</div>
+
+<!-- Trending Products Section -->
+<div class="container-fluid px-0 mx-0 mb-0 pb-0">
+    <div class="container col-lg-11 py-4">
+        <div class="row">
+            <h4 class="text text-secondary fw-bold mb-3">30% Sale Products</h4>
+            <div class="col-lg-3 mb-3">
+                <div class="p-0 border border-muted">
+                    <img src="https://source.unsplash.com/random?jackets" class="img-fluid product_img" alt="">
+                    <div class="info py-3 px-3">
+                        <a href="#" class="text-decoration-none">
+                            <h5 class="text text-dark fw-bold">Jackets Product</h5>
+                        </a>
+                        <h6 class="text text-secondary mb-3"> Rs. 5000</h6>
+                        <a href="$" class="btn btn-sm btn-primary w-100">
+                            Buy Now
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 mb-3">
+                <div class="p-0 border border-muted">
+                    <img src="https://source.unsplash.com/random?laptop" class="img-fluid product_img" alt="">
+                    <div class="info py-3 px-3">
+                        <a href="#" class="text-decoration-none">
+                            <h5 class="text text-dark fw-bold">Laptops Product</h5>
+                        </a>
+                        <h6 class="text text-secondary mb-3"> Rs. 127000</h6>
+                        <a href="$" class="btn btn-sm btn-primary w-100">
+                            Buy Now
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 mb-3">
+                <div class="p-0 border border-muted">
+                    <img src="https://source.unsplash.com/random?pants" class="img-fluid product_img" alt="">
+                    <div class="info py-3 px-3">
+                        <a href="#" class="text-decoration-none">
+                            <h5 class="text text-dark fw-bold">Pants Product</h5>
+                        </a>
+                        <h6 class="text text-secondary mb-3"> Rs. 2500</h6>
+                        <a href="$" class="btn btn-sm btn-primary w-100">
+                            Buy Now
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 mb-3">
+                <div class="p-0 border border-muted">
+                    <img src="https://source.unsplash.com/random?shirts" class="img-fluid product_img" alt="">
+                    <div class="info py-3 px-3">
+                        <a href="#" class="text-decoration-none">
+                            <h5 class="text text-dark fw-bold">Shirts Product</h5>
+                        </a>
+                        <h6 class="text text-secondary mb-3"> Rs. 1800</h6>
+                        <a href="$" class="btn btn-sm btn-primary w-100">
+                            Buy Now
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
 

@@ -4,9 +4,9 @@
             <div class="col-md-6 me-auto">
                 <form action="{% url 'ecomapp:search' %}" method="GET">
                     <div class="d-flex align-items-center mx-3">
-                        <input type="search" class="form-control me-2" name="keyword" placeholder="Search Product here"
+                        <input type="search" class="form-control me-2 search_input" name="keyword" placeholder="Search Product here"
                             required>
-                        <button type="submit" class="btn btn-primary px-4">Search</button>
+                        <button type="submit" class="btn btn-outline-primary px-4">Search</button>
                     </div>
                 </form>
             </div>
@@ -16,11 +16,11 @@
     <div class="container col-lg-11 my-0">
         <nav class="navbar navbar-expand-lg my-0">
             <div class="container-fluid navbar_section">
-                <a class="navbar-brand" href="{% url 'ecomapp:home' %}">G-Store</a>
+                <a class="navbar-brand nav_logo" href="{% url 'ecomapp:home' %}">G-Store</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
                     aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
+                    <i class="fa-solid fa-bars-staggered text-light"></i>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
