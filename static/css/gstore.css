@@ -1,0 +1,94 @@
+/*  */
+
+
+
+/* Global Styling */
+::-webkit-scrollbar{
+    display: none;
+}
+::selection{
+    background: #e4e7eb;
+    color: #100d1e;
+}
+.btn{
+    border-radius: 0px !important;
+    font-size: 1.03rem;
+    letter-spacing: 1.1px;
+    font-weight: 600;
+}
+.btn:focus, .btn:active:focus, .btn.active:focus{
+    outline:none;
+    box-shadow:none;
+}
+.form-control:focus, .form-control:active:focus, .form-control.active:focus{
+    outline: none;
+    box-shadow: none;
+}
+.form-control{
+    border-radius: 0px !important;
+}
+.form-select{
+    border-radius: 0px;
+}
+.form-select:focus, .form-select:active:focus, .form-select.active:focus{
+    outline: none;
+    box-shadow: none;
+}
+.form-check-input[type=checkbox]{
+    border-radius: 0px !important;
+}
+.form-check-input:focus, .form-check-input:active:focus, .form-check-input.active:focus{
+    outline: none;
+    box-shadow: none;
+}
+
+.navbar_section{
+    width: 100%;
+}
+.navbar_section .nav-link{
+    font-size: 1.1033rem;
+    color: bisque;
+}
+.carousel_img{
+    width: 100%;
+    height: 90vh;
+    object-fit: cover;
+    object-position: center;
+}
+.category_info_box{
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+}
+.category_img{
+    width: 100%;
+    height: 38vh;
+    object-fit: cover;
+    object-position: center;
+    transition: all 0.5s ease-out;
+}
+.category_img:hover{
+    opacity: 0.6;
+    transform: scale(1.1);
+}
+.category_data{
+    position: absolute;
+    top: 36.5%;
+    left: 23.7%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    opacity: 0;
+    transition: opacity 1.0s ease-out;
+}
+.category_info_box:hover .category_data{
+    opacity: 1;
+}
+.product_img{
+    width: 100%;
+    height: 38vh;
+    object-fit: cover;
+    object-position: center;
+}
+

@@ -1,0 +1,59 @@
+<div class="container-fluid px-0 mx-0 bg-dark">
+    <div class="container col-lg-11 pt-3 pb-2">
+        <div class="row">
+            <div class="col-md-6 me-auto">
+                <form action="{% url 'ecomapp:search' %}" method="GET">
+                    <div class="d-flex align-items-center mx-3">
+                        <input type="search" class="form-control me-2" name="keyword" placeholder="Search Product here"
+                            required>
+                        <button type="submit" class="btn btn-primary px-4">Search</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <hr class="bg-secondary my-0">
+    <div class="container col-lg-11 my-0">
+        <nav class="navbar navbar-expand-lg my-0">
+            <div class="container-fluid navbar_section">
+                <a class="navbar-brand" href="{% url 'ecomapp:home' %}">G-Store</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="{% url 'ecomapp:home' %}">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'ecomapp:about' %}">About Us</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'ecomapp:allproducts' %}">Product</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'ecomapp:mycart' %}">My Cart</a>
+                        </li>
+                        {% if request.user.customer %}
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'ecomapp:userprofile' %}">My Profile</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'ecomapp:logout' %}">Logout</a>
+                        </li>
+                        {% else %}
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'ecomapp:register' %}">Register</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'ecomapp:login' %}">Login</a>
+                        </li>
+                        {% endif %}
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div>
+</div>

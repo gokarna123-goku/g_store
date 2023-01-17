@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Search{% endblock %}
+
+{% block content %}
+<div class="container my-3">
+    <div class="row">
+        <div class="col-md-12">
+            <h3>Search Results for <span class="text-primary fw-bold">"{{request.GET.keyword}}"</span></h3>
+            <hr>
+            <div class="row">
+                {% for result in results %}
+                <div class="col-md-4 mb-4">
+                    <div class="p-2 bg-white shadow-sm border">
+                        <img src="{{result.image.url}}" alt="" class="img-fluid">
+                        <h4 class=""><a href="{% url 'ecomapp:productdetail' result.slug %}" class="text-decoration-none">{{result.title}}</a></h4>
+                        <p class="">{{result.description|truncatewords:15}}</p>
+                        <p class="h6">Rs. {{result.selling_price}}</p>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

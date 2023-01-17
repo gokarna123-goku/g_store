@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}{{ product.title }}{% endblock %}
+
+{% block content %}
+<div class="container-fluid px-0 mx-0 my-5">
+    <div class="container col-md-11">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="p-3 shadow-sm">
+                    <div class="py-2 px-4 bg-light mb-4">This product viewed {{ product.view_count }} times</div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="p-2">
+                                <img src="{{ product.image.url }}" alt="" class="img-fluid">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="p-2">
+                                <h4 class="text text-dark">{{ product.title }}</h4>
+                                <h5 class="text">Category: {{ product.category }} </h5>
+                                <p class="text"><s class="text-muted me-3">Rs. {{ product.marked_price }}</s> Rs. {{ product.selling_price }}</p>
+                                <hr>
+                                <p class="text text-info">Warranty: {{ product.warranty }}</p>
+                                <p class="text text-info">Return Policy: {{ product.return_policy }}</p>
+                                <hr>
+                                <p class="text text-secondary">{{ product.description }}</p>
+                                <a href="{% url 'ecomapp:addtocart' product.id %}" class="btn btn-sm btn-primary w-100" style="border-radius: 0px;">Add to Cart</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

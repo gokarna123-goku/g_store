@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Checkout{% endblock %}
+
+{% block content %}
+
+<div class="container col-lg-7">
+    <div class="p-3 bg-white shadow-sm">
+        <h3 class="text text-dark mb-0">Login Form</h3>
+        <hr class="mb-4 mt-1">
+        <form action="" method="POST">
+            {% csrf_token %}
+            {{form.as_p}}
+            <button class="btn btn-primary px-4">Login</button>
+            {% if error %}
+            <ul>
+                <li class="text text-danger">{{error}}</li>
+            </ul>
+            {% endif %}
+        </form>
+        <p class="text-dark my-4">Or don't have account? <a href="{% url 'ecomapp:register' %}{% if request.GET.next %}?next={{request.GET.next}}{% endif %}" class="text-decoration-none">Register</a></p>
+    </div>
+</div>
+
+{% endblock %}

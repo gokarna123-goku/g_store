@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Checkout{% endblock %}
+
+{% block content %}
+
+<div class="container col-lg-7">
+    <div class="p-3 bg-white shadow-sm">
+        <h3 class="text text-dark mb-0">Registration Form</h3>
+        <hr class="mb-4 mt-1">
+        <form action="" method="POST">
+            {% csrf_token %}
+            {{form.as_p}}
+            <button class="btn btn-primary px-4">Register</button>
+        </form>
+    </div>
+</div>
+
+{% endblock %}
