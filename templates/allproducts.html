@@ -3,28 +3,42 @@
 {% block title %}Products{% endblock %}
 
 {% block content %}
-<div class="container col-md-11">
-    {% for category in allcategories %}
-        <h4 class="text text-secondary my-3">{{ category.title }}</h4>
-        <hr>
-        <div class="row">
-            <!-- model clss Product => product and _set means many products of a single products -->
-            {% for product in category.product_set.all %}
-                <div class="col-md-4 mb-4">
-                    <div class="p-0 shadow-sm">
-                        <img src="{{ product.image.url }}" class="img-fluid" alt="" style=" width: 100%; height: 20vh;">
-                        <div class="info py-3 px-2">
-                            <a href="{% url 'ecomapp:productdetail' product.slug %}" class="text-decoration-none">
-                                <h5 class="text text-dark">{{ product.title }}</h5>
-                            </a>
-                            <p class="text"><s class="text-muted me-3">Rs. {{ product.marked_price }}</s> Rs. {{ product.selling_price }}</p>
-                            <a href="{% url 'ecomapp:addtocart' product.id %}" class="btn btn-sm btn-primary w-100" style="border-radius: 0px;">Add to Cart</a>
+<div class="container-fluid ps-0 pe-3">
+    <div class="row">
+        <div class="col-lg-3">
+            <div class="p-2 bg-light">
+                <h5 class="text text-dark">Filter By Category</h5>
+                <hr>
+            </div>
+        </div>
+        <div class="col-lg-9">
+            <div class="p-2">
+                {% for category in allcategories %}
+                <h4 class="text text-secondary my-3">{{ category.title }}</h4>
+                <hr>
+                <div class="row">
+                    <!-- model clss Product => product and _set means many products of a single products -->
+                    {% for product in category.product_set.all %}
+                    <div class="col-md-3 mb-4">
+                        <div class="p-0 shadow-sm">
+                            <img src="{{ product.image.url }}" class="img-fluid product_img" alt="">
+                            <div class="info py-3 px-2">
+                                <a href="{% url 'ecomapp:productdetail' product.slug %}" class="text-decoration-none">
+                                    <h5 class="text text-dark">{{ product.title }}</h5>
+                                </a>
+                                <p class="text"><s class="text-muted me-3">Rs. {{ product.marked_price }}</s> Rs. {{
+                                    product.selling_price }}</p>
+                                <a href="{% url 'ecomapp:addtocart' product.id %}" class="btn btn-sm btn-primary w-100"
+                                    style="border-radius: 0px;">Add to Cart</a>
+                            </div>
                         </div>
                     </div>
+                    {% endfor %}
                 </div>
-            {% endfor %}
+                {% endfor %}
+            </div>
         </div>
-    {% endfor %}
+    </div>
 </div>
 
 {% endblock %}
