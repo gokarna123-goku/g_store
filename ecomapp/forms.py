@@ -9,7 +9,7 @@ class CheckoutForm(forms.ModelForm):
         fields = ['order_by', 'shipping_address', 'mobile', 'email', 'payment_method']
 
 class RegistrationForm(forms.ModelForm): 
-    username = forms.CharField(widget=forms.TextInput())
+    username = forms.CharField(widget=forms.EmailInput(attrs={'class': 'form-control', 'placeholder': '@goku', 'style': 'border-radius: 0px;'}))
     password = forms.CharField(widget=forms.PasswordInput())
     email = forms.CharField(widget=forms.EmailInput())
     class Meta:

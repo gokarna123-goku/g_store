@@ -3,39 +3,112 @@
 {% block title %}Products{% endblock %}
 
 {% block content %}
-<div class="container-fluid ps-0 pe-3">
-    <div class="row">
-        <div class="col-lg-3">
-            <div class="p-2 bg-light">
-                <h5 class="text text-dark">Filter By Category</h5>
-                <hr>
-            </div>
-        </div>
-        <div class="col-lg-9">
-            <div class="p-2">
-                {% for category in allcategories %}
-                <h4 class="text text-secondary my-3">{{ category.title }}</h4>
-                <hr>
-                <div class="row">
-                    <!-- model clss Product => product and _set means many products of a single products -->
-                    {% for product in category.product_set.all %}
-                    <div class="col-md-3 mb-4">
-                        <div class="p-0 shadow-sm">
-                            <img src="{{ product.image.url }}" class="img-fluid product_img" alt="">
-                            <div class="info py-3 px-2">
-                                <a href="{% url 'ecomapp:productdetail' product.slug %}" class="text-decoration-none">
-                                    <h5 class="text text-dark">{{ product.title }}</h5>
-                                </a>
-                                <p class="text"><s class="text-muted me-3">Rs. {{ product.marked_price }}</s> Rs. {{
-                                    product.selling_price }}</p>
-                                <a href="{% url 'ecomapp:addtocart' product.id %}" class="btn btn-sm btn-primary w-100"
-                                    style="border-radius: 0px;">Add to Cart</a>
+<div class="container-fluid py-3">
+    <div class="container col-lg-11">
+        <div class="row">
+            <div class="col-lg-3">
+                <div class="py-2 px-3 bg-light">
+                    <!-- Search functionality -->
+                    <div class="section_box mb-5">
+                        <h5 class="text text-secondary my-3">Search Products here</h5>
+                        <div class="my-2">
+                            <div class="input-group">
+                                <input type="text" class="form-control product_search">
+                                <button class="btn btn-primary">
+                                    <i class="fa-solid fa-magnifying-glass"></i>
+                                </button>
                             </div>
                         </div>
                     </div>
+                    <!-- Filter By Category -->
+                    <div class="section_box mb-5">
+                        <h5 class="text text-secondary my-3">Products Categories</h5>
+                        <div class="my-2">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="category_name">
+                                    <a href="#" class="text-decoration-none text-dark">Jackets</a>
+                                </div>
+                                <div class="category_count">
+                                    <span class="badge rounded-pill bg-dark">02</span>
+                                </div>
+                            </div>
+                            <hr class="my-2">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="category_name">
+                                    <a href="#" class="text-decoration-none text-dark">Blazers</a>
+                                </div>
+                                <div class="category_count">
+                                    <span class="badge rounded-pill bg-dark">20</span>
+                                </div>
+                            </div>
+                            <hr class="my-2">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="category_name">
+                                    <a href="#" class="text-decoration-none text-dark">Shoes</a>
+                                </div>
+                                <div class="category_count">
+                                    <span class="badge rounded-pill bg-dark">15</span>
+                                </div>
+                            </div>
+                            <hr class="my-2">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="category_name">
+                                    <a href="#" class="text-decoration-none text-dark">Coat</a>
+                                </div>
+                                <div class="category_count">
+                                    <span class="badge rounded-pill bg-dark">18</span>
+                                </div>
+                            </div>
+                            <hr class="my-2">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="category_name">
+                                    <a href="#" class="text-decoration-none text-dark">Sari</a>
+                                </div>
+                                <div class="category_count">
+                                    <span class="badge rounded-pill bg-dark">09</span>
+                                </div>
+                            </div>
+                            <hr class="my-2">
+                        </div>
+                    </div>
+                    <!-- Filter By Price -->
+                    <div class="section_box mb-5">
+                        <h5 class="text text-secondary my-3">Filter By Price</h5>
+                        <div class="my-2">
+                            <input type="range" class="w-100">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-9">
+                <div class="p-2">
+                    {% for category in allcategories %}
+                    <h4 class="text text-secondary my-3">{{ category.title }}</h4>
+                    <hr>
+                    <div class="row">
+                        <!-- model clss Product => product and _set means many products of a single products -->
+                        {% for product in category.product_set.all %}
+                        <div class="col-md-4 mb-4">
+                            <div class="p-0 shadow-sm">
+                                <img src="{{ product.image.url }}" class="img-fluid product_img" alt="">
+                                <div class="info py-3 px-2">
+                                    <a href="{% url 'ecomapp:productdetail' product.slug %}"
+                                        class="text-decoration-none">
+                                        <h5 class="text text-dark">{{ product.title }}</h5>
+                                    </a>
+                                    <p class="text">
+                                        <s class="text-muted me-3">Rs. {{ product.marked_price }}</s>
+                                        Rs. {{ product.selling_price }}
+                                    </p>
+                                    <a href="{% url 'ecomapp:addtocart' product.id %}"
+                                        class="btn btn-sm btn-primary w-100" style="border-radius: 0px;">Add to Cart</a>
+                                </div>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
                     {% endfor %}
                 </div>
-                {% endfor %}
             </div>
         </div>
     </div>

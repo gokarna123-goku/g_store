@@ -4,7 +4,44 @@
 
 {% block content %}
 
-<div class="container col-lg-7">
+<div class="container-fluid px-0 mx-0 py-5 account_bg">
+    <div class="container col-lg-4">
+        <div class="py-4 px-5 account_card_bg">
+            <h3 class="text text-light mb-0">Login Form</h3>
+            <hr class="mb-3 mt-1 bg-light">
+            <form action="" method="POST" autocomplete="off" class="py-4">
+                {% csrf_token %}
+                <div class="mb-3">
+                    <label for="username" class="mb-2 fw-bold text-secondary">Username</label>
+                    <input type="text" id="username" name="username" class="form-control border account_input" placeholder="Username"
+                        autocomplete="off">
+                </div>
+                <div class="mb-4">
+                    <label for="password" class="mb-2 fw-bold text-secondary">Password</label>
+                    <input type="password" id="password" name="password" class="form-control border account_input"
+                        placeholder="Password" autocomplete="new-password">
+                </div>
+                {% if error %}
+                <p class="text bg-danger text-light mb-3 py-2 px-3"> {{error}}</p>
+                {% endif %}
+                <button class="btn btn-primary mb-0 w-100">Login as Customer</button>
+            </form>
+            <div class="d-flex align-items-center mb-4">
+                <div class="or_hr bg-secondary"></div>
+                <div class="or mx-3 text-light">OR</div>
+                <div class="or_hr bg-secondary"></div>
+            </div>
+            <p class="text-light mt-2 mb-0 fs-6">Don't have account yet?
+                <a href="{% url 'ecomapp:register' %}{% if request.GET.next %}?next={{request.GET.next}}{% endif %}"
+                    class="btn btn-sm btn-success ms-2">
+                    Get it now
+                </a>
+            </p>
+        </div>
+    </div>
+</div>
+
+<!-- <div class="container col-lg-7">
     <div class="p-3 bg-white shadow-sm">
         <h3 class="text text-dark mb-0">Login Form</h3>
         <hr class="mb-4 mt-1">
@@ -20,6 +57,6 @@
         </form>
         <p class="text-dark my-4">Or don't have account? <a href="{% url 'ecomapp:register' %}{% if request.GET.next %}?next={{request.GET.next}}{% endif %}" class="text-decoration-none">Register</a></p>
     </div>
-</div>
+</div> -->
 
 {% endblock %}

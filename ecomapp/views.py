@@ -167,7 +167,6 @@ class KhaltiRequestView(generic.View):
         }
         return render(request, self.template_name, context)
 
-
 class KhaltiVerifyView(generic.View):
     def get(self, request, *args, **kwargs):
         token = request.GET.get('token')
@@ -266,7 +265,7 @@ class LoginView(generic.FormView):
         if user is not None and Customer.objects.filter(user=user).exists():
             login(self.request,user)
         else:
-            return render(self.request, self.template_name, {'form':self.form_class, 'error': "Invalid Credentials!!!"})
+            return render(self.request, self.template_name, {'form':self.form_class, 'error': "Invalid Credentials. Try Again!!!"})
         return super().form_valid(form)
     
     def get_success_url(self):
@@ -322,7 +321,7 @@ class AdminLoginView(generic.FormView):
         if usr is not None and Admin.objects.filter(user=usr).exists():
             login(self.request,usr)
         else:
-            return render(self.request, self.template_name, {'form':self.form_class, 'error': "Invalid Credentials!!!"})
+            return render(self.request, self.template_name, {'form':self.form_class, 'error': "Invalid Credentials. Try Again!!!"})
         return super().form_valid(form)
 
 class AdminRequiredMixin(object):

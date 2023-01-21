@@ -10,6 +10,9 @@
     background: #e4e7eb;
     color: #100d1e;
 }
+/* ::placeholder{
+    color: #100d1e;
+} */
 .btn{
     border-radius: 0px !important;
     font-size: 1.03rem;
@@ -114,5 +117,68 @@
     height: 38vh;
     object-fit: cover;
     object-position: center;
+}
+
+
+/* Registration Section Styling */
+.account_bg{
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.80), rgba(0, 0, 0, 0.78), rgba(0, 0, 0, 0.76), rgba(0, 0, 0, 0.74), rgba(0, 0, 0, 0.72)), url("https://source.unsplash.com/random?laptop");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: auto;
+}
+
+.account_card_bg{
+    border-radius: 0px;
+    backdrop-filter: blur(3px);
+    background: rgba(255,255,255,0.1);
+    box-shadow: 0 25px 45px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255,255,255,0.5);
+    border-right: 1px solid rgba(255,255,255,0.2);
+    border-bottom: 1px solid rgba(255,255,255,0.2);
+}
+.or_hr{
+    width: 100%;
+    height: 1.2px;
+}
+
+.account_input:focus, .account_input:active:focus, .account_input.active:focus{
+    outline: none;
+    backdrop-filter: blur(10px);
+    background: rgba(255,255,255,0.1);
+    box-shadow: 0 25px 45px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255,255,255,0.5);
+}
+.account_input{
+    border-radius: 0px !important;
+    backdrop-filter: blur(3px);
+    background: rgba(255,255,255,0.1);
+    box-shadow: 0 25px 45px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255,255,255,0.5);
+}
+
+/* Banner Section Styling */
+.banner_box{
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.72), rgba(0, 0, 0, 0.70)), url("https://source.unsplash.com/random?shoes");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 60vh;
+}
+
+.rounded-pill{
+    border-radius: 25px !important;
+}
+
+
+/* Products Section Styling */
+.product_search{
+    background: #778593;
+    color: #e4e7eb;
+}
+.product_search:focus, .product_search:active:focus, .product_search.active:focus{
+    background: #778593;
+    color: #e4e7eb;
 }
 
