@@ -1,3 +1,4 @@
+{% load static %}
 <div class="container-fluid px-0 mx-0 bg-dark">
     <div class="container col-lg-11 py-1 px-4 d-lg-block d-sm-none d-none">
         <div class="d-flex justify-content-between align-items-center">
@@ -52,7 +53,9 @@
     <div class="container col-lg-11 my-0">
         <nav class="navbar navbar-expand-lg my-0">
             <div class="container-fluid navbar_section">
-                <a class="navbar-brand nav_logo" href="{% url 'ecomapp:home' %}">G-Store</a>
+                <a class="navbar-brand nav_logo" href="{% url 'ecomapp:home' %}">
+                    <img src="{% static 'img/logo/gstore.png' %}" alt="G-Store Website Logo" class="gstore_logo">
+                </a>
                 <button class="btn navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
                     aria-label="Toggle navigation">

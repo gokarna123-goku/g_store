@@ -45,6 +45,12 @@
     box-shadow: none;
 }
 
+
+/* navbar */
+.gstore_logo{
+    width: 120px;
+    height: 45px;
+}
 .navbar_section{
     width: 100%;
 }
