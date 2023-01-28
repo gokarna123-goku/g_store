@@ -88,7 +88,7 @@
                     <div class="row">
                         <!-- model clss Product => product and _set means many products of a single products -->
                         {% for product in category.product_set.all %}
-                        <div class="col-md-4 mb-4">
+                        <div class="col-md-4 col-md-6 mb-4">
                             <div class="p-0 shadow-sm">
                                 <img src="{{ product.image.url }}" class="img-fluid product_img" alt="">
                                 <div class="info py-3 px-2">
@@ -100,8 +100,16 @@
                                         <s class="text-muted me-3">Rs. {{ product.marked_price }}</s>
                                         Rs. {{ product.selling_price }}
                                     </p>
-                                    <a href="{% url 'ecomapp:addtocart' product.id %}"
-                                        class="btn btn-sm btn-primary w-100" style="border-radius: 0px;">Add to Cart</a>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <a href="{% url 'ecomapp:addtocart' product.id %}" class="btn btn-sm btn-primary px-2">
+                                            <i class="fa-solid fa-cart-plus me-2"></i> Add to Cart
+                                        </a>
+                                        <a href="#" class="btn btn-sm btn-outline-primary px-3">
+                                            <i class="fa-regular fa-heart"></i>
+                                        </a>
+                                    </div>
+                                    <!-- <a href="{% url 'ecomapp:addtocart' product.id %}"
+                                        class="btn btn-sm btn-primary w-100" style="border-radius: 0px;">Add to Cart</a> -->
                                 </div>
                             </div>
                         </div>

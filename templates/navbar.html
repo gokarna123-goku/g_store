@@ -1,22 +1,34 @@
 <div class="container-fluid px-0 mx-0 bg-dark">
-    <div class="container col-lg-11 py-1 px-4">
+    <div class="container col-lg-11 py-1 px-4 d-lg-block d-sm-none d-none">
         <div class="d-flex justify-content-between align-items-center">
-            <div class="message">
-                <p class="text text-secondary mb-0">Welcome to you G-Store,</p>
+            <div class="message d-flex align-items-center">
+                <div class="welcome_text me-4">
+                    <p class="text text-secondary mb-0">Welcome to you G-Store,</p>
+                </div>
+                <div class="contact_text">
+                    <p class="text text-secondary mb-0">Call us: +977-9809809800</p>
+                </div>
             </div>
-            <div class="social_icons">
-                <a href="#" class="text-decoration-none me-3 text-secondary">
-                    <i class="fa-brands fa-square-facebook"></i>
-                </a>
-                <a href="#" class="text-decoration-none me-3 text-secondary">
-                    <i class="fa-brands fa-square-instagram"></i>
-                </a>
-                <a href="#" class="text-decoration-none me-3 text-secondary">
-                    <i class="fa-brands fa-square-twitter"></i>
-                </a>
-                <a href="#" class="text-decoration-none me-3 text-secondary">
-                    <i class="fa-brands fa-square-youtube"></i>
-                </a>
+            <div class="social_icons d-flex align-items-center">
+                <div class="wishlist_button me-4">
+                    <a href="#" class="btn btn-link text-decoration-none text-secondary">
+                        <i class="fa-solid fa-heart"></i> Wishlist
+                    </a>
+                </div>
+                <div class="icons">
+                    <a href="#" class="text-decoration-none me-3 text-secondary">
+                        <i class="fa-brands fa-square-facebook"></i>
+                    </a>
+                    <a href="#" class="text-decoration-none me-3 text-secondary">
+                        <i class="fa-brands fa-square-instagram"></i>
+                    </a>
+                    <a href="#" class="text-decoration-none me-3 text-secondary">
+                        <i class="fa-brands fa-square-twitter"></i>
+                    </a>
+                    <a href="#" class="text-decoration-none me-2 text-secondary">
+                        <i class="fa-brands fa-square-youtube"></i>
+                    </a>
+                </div>
             </div>
         </div>
     </div>
@@ -41,14 +53,23 @@
         <nav class="navbar navbar-expand-lg my-0">
             <div class="container-fluid navbar_section">
                 <a class="navbar-brand nav_logo" href="{% url 'ecomapp:home' %}">G-Store</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                <button class="btn navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
                     aria-label="Toggle navigation">
                     <i class="fa-solid fa-bars-staggered text-light"></i>
                 </button>
-                <div class="search_section w-50">
+                <div class="search_section w-50 d-lg-block d-sm-none d-none">
                     <form action="{% url 'ecomapp:search' %}" method="GET">
                         <div class="d-flex align-items-center mx-3">
+                            <input type="search" class="form-control me-2 search_input" name="keyword" placeholder="Search Product here"
+                                required>
+                            <button type="submit" class="btn btn-outline-primary px-4">Search</button>
+                        </div>
+                    </form>
+                </div>
+                <div class="search_section w-100 d-lg-none d-sm-block d-block">
+                    <form action="{% url 'ecomapp:search' %}" method="GET">
+                        <div class="d-flex align-items-center">
                             <input type="search" class="form-control me-2 search_input" name="keyword" placeholder="Search Product here"
                                 required>
                             <button type="submit" class="btn btn-outline-primary px-4">Search</button>
@@ -85,6 +106,11 @@
                         </li>
                         {% endif %}
                     </ul>
+                    <div class="wishlist_button d-flex justify-content-start align-items-center d-lg-none d-sm-block d-block">
+                        <a href="#" class="text-decoration-none h6 text-secondary d-lg-none d-sm-block d-block">
+                            <i class="fa-solid fa-heart me-2 "></i> Wishlist
+                        </a>
+                    </div>
                 </div>
             </div>
         </nav>
