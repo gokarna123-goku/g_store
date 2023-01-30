@@ -21,13 +21,13 @@
                 </thead>
                 <tbody>
                     {% for cartproduct in cart.cartproduct_set.all %}
-                        <tr>
-                            <td>{{ forloop.counter }}</td>
-                            <td>{{ cartproduct.product.title }}</td>
-                            <td>Rs. {{ cartproduct.rate }}</td>
-                            <td>{{ cartproduct.quantity }}</td>
-                            <td>Rs. {{ cartproduct.subtotal }}</td>
-                        </tr>
+                    <tr>
+                        <td>{{ forloop.counter }}</td>
+                        <td>{{ cartproduct.product.title }}</td>
+                        <td>Rs. {{ cartproduct.rate }}</td>
+                        <td>{{ cartproduct.quantity }}</td>
+                        <td>Rs. {{ cartproduct.subtotal }}</td>
+                    </tr>
                     {% endfor %}
                     <tr>
                         <th colspan="4" class="text-end pe-3">Total</th>

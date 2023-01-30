@@ -10,7 +10,7 @@
             <hr>
             <div class="row">
                 {% for result in results %}
-                <div class="col-md-4 mb-4">
+                <div class="col-lg-4 col-md-4 mb-4">
                     <div class="p-2 bg-white shadow-sm border">
                         <img src="{{result.image.url}}" alt="" class="img-fluid">
                         <h4 class=""><a href="{% url 'ecomapp:productdetail' result.slug %}" class="text-decoration-none">{{result.title}}</a></h4>

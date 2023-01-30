@@ -18,33 +18,35 @@
             </span>{{order_obj.shipping_address}}&nbsp;({{order_obj.email}})</p>
         <hr>
         <h4>Ordered Items</h4>
-        <table class="table table-bordered">
-            <thead>
-                <tr>
-                    <th>S.N.</th>
-                    <th>Item</th>
-                    <th>Rate</th>
-                    <th>Quantity</th>
-                    <th>Subtotal</th>
-                </tr>
-            </thead>
-            <tbody>
-                {% for cp in order_obj.cart.cartproduct_set.all %}
-                <tr>
-                    <td>{{forloop.counter}}</td>
-                    <td><a target="_blank" href="{% url 'ecomapp:productdetail' cp.product.slug %}"
-                            class="text-decoration-none">{{cp.product.title}}</a> ({{cp.product.id}})</td>
-                    <td>{{cp.rate | intcomma}}</td>
-                    <td>{{cp.quantity}}</td>
-                    <td>{{cp.subtotal | intcomma}}</td>
-                </tr>
-                {% endfor %}
-                <tr>
-                    <th colspan="4" class="text-end">Total:</th>
-                    <th>Rs. {{order_obj.total | intcomma}}/-</th>
-                </tr>
-            </tbody>
-        </table>
+        <div class="table-responsive">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>S.N.</th>
+                        <th>Item</th>
+                        <th>Rate</th>
+                        <th>Quantity</th>
+                        <th>Subtotal</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for cp in order_obj.cart.cartproduct_set.all %}
+                    <tr>
+                        <td>{{forloop.counter}}</td>
+                        <td><a target="_blank" href="{% url 'ecomapp:productdetail' cp.product.slug %}"
+                                class="text-decoration-none">{{cp.product.title}}</a> ({{cp.product.id}})</td>
+                        <td>{{cp.rate | intcomma}}</td>
+                        <td>{{cp.quantity}}</td>
+                        <td>{{cp.subtotal | intcomma}}</td>
+                    </tr>
+                    {% endfor %}
+                    <tr>
+                        <th colspan="4" class="text-end">Total:</th>
+                        <th>Rs. {{order_obj.total | intcomma}}/-</th>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
     </div>
 </div>
 

@@ -7,42 +7,45 @@
 <div class="container col-lg-11">
     <div class="row my-3">
         <div class="col-lg-5 col-md-12 mb-4">
-           <div class="p-3 bg-light shadow-sm border">
-            <h3>Detail Information</h3>
-            <hr>
-            <p><span class="fw-bold">Name:</span> {{customer.fullname}}</p>
-            <p><span class="fw-bold">Email: </span> {{customer.user.email}}</p>
-            <p><span class="fw-bold">Username: </span> {{customer.user.username}}</p>
-            <p><span class="fw-bold">Mobile: </span> {{customer.address}}</p>
-            <p><span class="fw-bold">Active since: </span> {{customer.joined_on}}</p>
-           </div>
+            <div class="p-3 bg-light shadow-sm border">
+                <h3>Detail Information</h3>
+                <hr>
+                <p><span class="fw-bold">Name:</span> {{customer.fullname}}</p>
+                <p><span class="fw-bold">Email: </span> {{customer.user.email}}</p>
+                <p><span class="fw-bold">Username: </span> {{customer.user.username}}</p>
+                <p><span class="fw-bold">Mobile: </span> {{customer.address}}</p>
+                <p><span class="fw-bold">Active since: </span> {{customer.joined_on}}</p>
+            </div>
         </div>
         <div class="col-lg-7 col-md-12">
             <div class="p-3 bg-light shadow-sm border">
                 <h3>Previous Orders</h3>
-                <hr>
-                <table class="table">
-                    <thead>
-                        <tr>
-                            <th>S.N.</th>
-                            <th>Order ID</th>
-                            <th>Order Amount</th>
-                            <th>Ordered On</th>
-                            <th>Status</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {% for order in orders %}
-                        <tr>
-                            <td>{{forloop.counter}}</td>
-                            <td><a href="{% url 'ecomapp:customerorderdetail' order.id %}">#Order_{{order.id}}</a></td>
-                            <td>{{order.total}}</td>
-                            <td>{{order.created_at|timesince}} ago</td>
-                            <td>{{order.order_status}}</td>
-                        </tr>
-                        {% endfor %}
-                    </tbody>
-                </table>
+                <hr class="">
+                <div class="table-responsive">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>S.N.</th>
+                                <th>Order ID</th>
+                                <th>Order Amount</th>
+                                <th>Ordered On</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for order in orders %}
+                            <tr>
+                                <td>{{forloop.counter}}</td>
+                                <td><a href="{% url 'ecomapp:customerorderdetail' order.id %}">#Order_{{order.id}}</a>
+                                </td>
+                                <td>{{order.total}}</td>
+                                <td>{{order.created_at|timesince}} ago</td>
+                                <td>{{order.order_status}}</td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
             </div>
         </div>
     </div>
