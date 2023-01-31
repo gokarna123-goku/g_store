@@ -36,7 +36,7 @@
     <!--  -->
     <hr class="bg-secondary my-0">
     <!--  -->
-    <!-- <div class="container col-lg-11 py-2">
+    <div class="container col-lg-11 py-2">
         <div class="row">
             <div class="col-md-6 me-auto">
                 <form action="{% url 'ecomapp:search' %}" method="GET">
@@ -49,7 +49,7 @@
             </div>
         </div>
     </div>
-    <hr class="bg-secondary my-0"> -->
+    <hr class="bg-secondary my-0">
     <div class="container col-lg-11 my-0">
         <nav class="navbar navbar-expand-lg my-0">
             <div class="container-fluid navbar_section">
@@ -57,15 +57,15 @@
                     <img src="{% static 'img/logo/gstore.png' %}" alt="G-Store Website Logo" class="gstore_logo">
                 </a>
                 <button class="btn navbar-toggler" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-                    aria-label="Toggle navigation">
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
                     <i class="fa-solid fa-bars-staggered text-light"></i>
                 </button>
-                <div class="search_section w-50 d-lg-block d-sm-none d-none">
+                <!-- <div class="search_section w-50 d-lg-block d-sm-none d-none">
                     <form action="{% url 'ecomapp:search' %}" method="GET">
                         <div class="d-flex align-items-center mx-3">
-                            <input type="search" class="form-control me-2 search_input" name="keyword" placeholder="Search Product here"
-                                required>
+                            <input type="search" class="form-control me-2 search_input" name="keyword"
+                                placeholder="Search Product here" required>
                             <button type="submit" class="btn btn-outline-primary px-4">Search</button>
                         </div>
                     </form>
@@ -73,12 +73,12 @@
                 <div class="search_section w-100 d-lg-none d-sm-block d-block">
                     <form action="{% url 'ecomapp:search' %}" method="GET">
                         <div class="d-flex align-items-center">
-                            <input type="search" class="form-control me-2 search_input" name="keyword" placeholder="Search Product here"
-                                required>
+                            <input type="search" class="form-control me-2 search_input" name="keyword"
+                                placeholder="Search Product here" required>
                             <button type="submit" class="btn btn-outline-primary px-4">Search</button>
                         </div>
                     </form>
-                </div>
+                </div> -->
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                         <li class="nav-item">
@@ -87,8 +87,60 @@
                         <li class="nav-item">
                             <a class="nav-link" href="{% url 'ecomapp:about' %}">About Us</a>
                         </li>
+                        <li class="nav-item category_nav">
+                            <a class="nav-link">Categories</a>
+                            <ul class="subnav px-3 mx-0">
+                                <li class="nav-item sub_parent_nav">
+                                    <a href="#"
+                                        class="nav-link subnav-link">
+                                        Men's Fashion
+                                    </a>
+                                    <ul class="sub_child_nav">
+                                        <li class="nav-item">
+                                            <a href="#" class="nav-link">Clothes</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a href="#" class="nav-link">Shoes</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a href="#" class="nav-link">Accessories</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a href="#" class="nav-link">Men's Bags</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="#"
+                                        class="nav-link subnav-link">
+                                        Women's Fashion
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="#"
+                                        class="nav-link subnav-link">
+                                        Electronic Devices
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="#"
+                                        class="nav-link subnav-link">
+                                        Home Appliances
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="#"
+                                        class="nav-link subnav-link">
+                                        Special Offers
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
                         <li class="nav-item">
                             <a class="nav-link" href="{% url 'ecomapp:allproducts' %}">Product</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Special Offers</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="{% url 'ecomapp:mycart' %}">My Cart</a>
@@ -109,7 +161,8 @@
                         </li>
                         {% endif %}
                     </ul>
-                    <div class="wishlist_button d-flex justify-content-start align-items-center d-lg-none d-sm-block d-block">
+                    <div
+                        class="wishlist_button d-flex justify-content-start align-items-center d-lg-none d-sm-block d-block">
                         <a href="#" class="text-decoration-none h6 text-secondary d-lg-none d-sm-block d-block">
                             <i class="fa-solid fa-heart me-2 "></i> Wishlist
                         </a>
