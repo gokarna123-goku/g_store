@@ -148,8 +148,6 @@
 
 
 
-
-
 /*  */
 .carousel_img{
     width: 100%;
@@ -187,6 +185,19 @@
 .category_info_box:hover .category_data{
     opacity: 1;
 }
+
+.product_card{
+    /* background: transparent; */
+    transition: 0.5s ease-out;
+    cursor: pointer;
+}
+.product_card:hover{
+    /* box-shadow: 1px 1px 1px #908f8d; */
+    box-shadow:  0.5px 0.5px 6px #908f8d,
+             -0.5px -0.5px 6px #807d7d;
+}
+
+
 .product_img{
     width: 100%;
     height: 38vh;

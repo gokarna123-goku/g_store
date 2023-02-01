@@ -89,7 +89,7 @@
                         <!-- model clss Product => product and _set means many products of a single products -->
                         {% for product in category.product_set.all %}
                         <div class="col-lg-4 col-md-6 mb-4">
-                            <div class="p-0 shadow-sm">
+                            <div class="p-0 shadow-sm product_card">
                                 <img src="{{ product.image.url }}" class="img-fluid product_img" alt="">
                                 <div class="info py-3 px-2">
                                     <a href="{% url 'ecomapp:productdetail' product.slug %}"
