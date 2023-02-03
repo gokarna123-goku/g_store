@@ -41,8 +41,8 @@
             <div class="col-md-6 me-auto">
                 <form action="{% url 'ecomapp:search' %}" method="GET">
                     <div class="d-flex align-items-center mx-3">
-                        <input type="search" class="form-control me-2 search_input" name="keyword" placeholder="Search Product here"
-                            required>
+                        <input type="search" class="form-control me-2 search_input" name="keyword"
+                            placeholder="Search Product here" required>
                         <button type="submit" class="btn btn-outline-primary px-4">Search</button>
                     </div>
                 </form>
@@ -89,52 +89,99 @@
                         </li>
                         <li class="nav-item category_nav">
                             <a class="nav-link">Categories &raquo;</a>
-                            <ul class="subnav px-3 mx-0">
-                                <li class="nav-item sub_parent_nav">
-                                    <a href="#"
-                                        class="nav-link subnav-link">
-                                        Men's Fashion
-                                    </a>
-                                    <ul class="sub_child_nav">
-                                        <li class="nav-item">
-                                            <a href="#" class="nav-link">Clothes</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a href="#" class="nav-link">Shoes</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a href="#" class="nav-link">Accessories</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a href="#" class="nav-link">Men's Bags</a>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="#"
-                                        class="nav-link subnav-link">
-                                        Women's Fashion
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="#"
-                                        class="nav-link subnav-link">
-                                        Electronic Devices
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="#"
-                                        class="nav-link subnav-link">
-                                        Home Appliances
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="#"
-                                        class="nav-link subnav-link">
-                                        Special Offers
-                                    </a>
-                                </li>
-                            </ul>
+                            <div class="subnav">
+                                <ul class="px-3 mx-0">
+                                    <li class="nav-item sub_parent_nav">
+                                        <a class="nav-link subnav-link">
+                                            Men's Fashion
+                                        </a>
+                                        <div class="sub_child_nav">
+                                            <ul class="sub_child_nav_list mx-3">
+                                                <li class="nav-item">
+                                                    <a href="#" class="nav-link">Clothes</a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a href="#" class="nav-link">Shoes</a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a href="#" class="nav-link">Accessories</a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a href="#" class="nav-link">Men's Bags</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li class="nav-item sub_parent_nav">
+                                        <a class="nav-link subnav-link">
+                                            Women's Fashion
+                                        </a>
+                                        <div class="sub_child_nav">
+                                            <ul class="sub_child_nav_list mx-3">
+                                                <li class="nav-item">
+                                                    <a href="#" class="nav-link">Clothes</a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a href="#" class="nav-link">Shoes</a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a href="#" class="nav-link">Accessories</a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a href="#" class="nav-link">Men's Bags</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li class="nav-item sub_parent_nav">
+                                        <a class="nav-link subnav-link">
+                                            Electronic Devices
+                                        </a>
+                                        <div class="sub_child_nav">
+                                            <ul class="sub_child_nav_list mx-3">
+                                                <li class="nav-item">
+                                                    <a href="#" class="nav-link">Clothes</a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a href="#" class="nav-link">Shoes</a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a href="#" class="nav-link">Accessories</a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a href="#" class="nav-link">Men's Bags</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li class="nav-item sub_parent_nav">
+                                        <a class="nav-link subnav-link">
+                                            Home Appliances
+                                        </a>
+                                        <div class="sub_child_nav">
+                                            <ul class="sub_child_nav_list mx-3">
+                                                <li class="nav-item">
+                                                    <a href="#" class="nav-link">Clothes</a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a href="#" class="nav-link">Shoes</a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a href="#" class="nav-link">Accessories</a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a href="#" class="nav-link">Men's Bags</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="#" class="nav-link subnav-link">
+                                            Special Offers
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="{% url 'ecomapp:allproducts' %}">Product</a>

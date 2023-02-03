@@ -87,22 +87,22 @@
 .category_nav{
     position: relative;
     transition: 0.5s ease-out;
+    cursor: pointer;
 }
 
 .subnav{
     position: absolute;
-    left: 0;
-    width: 240px;
-    height: auto;
+    left: 10%;
+    width: 220px;
     background: #100d1e;
-    border: 2px solid #bfb0ff;
+    border: 2px solid #15102c;
     display: none;
     transition: 0.5s ease-out;
     z-index: 999;
 }
 
 .category_nav:hover .subnav{
-    display: block;
+    display: inline-block;
     animation: slideup .5s ease;
 }
 
@@ -114,6 +114,7 @@
 .sub_parent_nav{
     position: relative;
     transition: 0.5s ease-out;
+    cursor: pointer;
 }
 
 .sub_child_nav{
@@ -121,17 +122,18 @@
     top: 0;
     left: 100%;
     width: 240px;
-    height: auto;
-    background: #1e1351;
-    border: 2px solid #7764cc;
     display: none;
     transition: 0.5s ease-out;
     z-index: 999;
 }
 
 .sub_parent_nav:hover > .sub_child_nav{
-    display: block;
+    display: inline-block;
     /* animation: slideup .5s ease; */
+}
+.sub_child_nav_list{
+    background: #100d1e;
+    border: 2px solid #15102c;
 }
 
 
