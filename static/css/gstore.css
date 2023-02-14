@@ -154,7 +154,7 @@
 /*  */
 .carousel_img{
     width: 100%;
-    height: 90vh;
+    height: 80vh;
     object-fit: cover;
     object-position: center;
 }
@@ -249,7 +249,7 @@
 
 /* Banner Section Styling */
 .banner_box{
-    background: linear-gradient(to right, rgba(0, 0, 0, 0.72), rgba(0, 0, 0, 0.70)), url("https://source.unsplash.com/random?shoes");
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.72), rgba(0, 0, 0, 0.70)), url("../img/bg_5.jpg");
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -271,3 +271,28 @@
     color: #e4e7eb;
 }
 
+
+
+/* All collection/Quick access home page styling */
+.collection_section{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 0.09rem;
+    /* flex-wrap: nowrap; */
+    transition: 0.3s ease-out;
+}
+.single_collection_box{
+    width: 170px;
+    height: auto;
+    /* border: 1px solid #eeeeef; */
+    /* box-shadow: 1px 1px 5px #343a40; */
+}
+.single_collection_box:hover{
+    box-shadow: 1px 1px 5px #343a40;
+}
+.single_cat_img{
+    width: 100%;
+    height: 28vh;
+    /* object-fit: cover; */
+}

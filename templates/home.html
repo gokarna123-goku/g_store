@@ -8,16 +8,16 @@
     <div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
         <div class="carousel-inner">
             <div class="carousel-item active">
-                <img src="https://source.unsplash.com/random?coat&pants" class="carousel_img" alt="...">
+                <img src="{% static 'img/bg_1.jpg' %}" class="carousel_img" alt="...">
             </div>
             <div class="carousel-item">
-                <img src="https://source.unsplash.com/random?pants" class="carousel_img" alt="...">
+                <img src="{% static 'img/bg_2.jpg' %}" class="carousel_img" alt="...">
             </div>
             <div class="carousel-item">
-                <img src="https://source.unsplash.com/random?shoes" class="carousel_img" alt="...">
+                <img src="{% static 'img/bg_3.jpg' %}" class="carousel_img" alt="...">
             </div>
             <div class="carousel-item">
-                <img src="https://source.unsplash.com/random?jackets" class="carousel_img" alt="...">
+                <img src="{% static 'img/bg_4.jpg' %}" class="carousel_img" alt="...">
             </div>
         </div>
         <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
@@ -293,6 +293,38 @@
                             Buy Now
                         </a>
                     </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- All Collections -->
+<div class="container-fluid px-0 mx-0 all_collections_section">
+    <div class="container col-lg-11 py-5">
+        <div class="collection_section">
+            <div class="single_collection_box">
+                <img src="{% static 'img/men.jpg' %}" alt="" class="single_cat_img">
+                <div class="info_section p-2">
+                    <h6 class="text-dark">Men's Collection</h6>
+                </div>
+            </div>
+            <div class="single_collection_box">
+                <img src="{% static 'img/women.jpg' %}" alt="" class="single_cat_img">
+                <div class="info_section p-2">
+                    <h6 class="text-dark">Men's Collection</h6>
+                </div>
+            </div>
+            <div class="single_collection_box">
+                <img src="{% static 'img/bag.jpg' %}" alt="" class="single_cat_img">
+                <div class="info_section p-2">
+                    <h6 class="text-dark">Men's Collection</h6>
+                </div>
+            </div>
+            <div class="single_collection_box">
+                <img src="{% static 'img/gadget.jpg' %}" alt="" class="single_cat_img">
+                <div class="info_section p-2">
+                    <h6 class="text-dark">Men's Collection</h6>
                 </div>
             </div>
         </div>
