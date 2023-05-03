@@ -1,9 +1,17 @@
+{% load static %}
+
 <div class="container-fluid px-0 mx-0 bg-dark">
     <div class="container col-lg-11 py-5">
-        <p class="text-secondary mb-0">
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Expedita, accusamus perferendis tenetur quo quis
-            error ad asperiores exercitationem quasi, natus architecto rem quia. Blanditiis, est.
-        </p>
+       <div class="row">
+        <div class="col-lg-4">
+            <a class="navbar-brand nav_logo" href="{% url 'ecomapp:home' %}">
+                <img src="{% static 'img/logo/gstore.png' %}" alt="G-Store Website Logo" class="gstore_logo">
+            </a>
+        </div>
+        <div class="col-lg-2"></div>
+        <div class="col-lg-2"></div>
+        <div class="col-lg-4"></div>
+       </div>
     </div>
     <div class="container col-lg-11">
         <hr class="bg-secondary">
@@ -16,4 +24,4 @@
             </p>
         </div>
     </div>
-</div>
+</div> 
