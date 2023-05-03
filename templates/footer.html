@@ -2,16 +2,24 @@
 
 <div class="container-fluid px-0 mx-0 bg-dark">
     <div class="container col-lg-11 py-5">
-       <div class="row">
-        <div class="col-lg-4">
-            <a class="navbar-brand nav_logo" href="{% url 'ecomapp:home' %}">
-                <img src="{% static 'img/logo/gstore.png' %}" alt="G-Store Website Logo" class="gstore_logo">
-            </a>
+        <div class="row">
+            <div class="col-lg-4">
+                <a class="navbar-brand nav_logo" href="{% url 'ecomapp:home' %}">
+                    <img src="{% static 'img/logo/gstore.png' %}" alt="G-Store Website Logo" class="gstore_logo">
+                </a>
+                <p class="gstore_desc text-light pt-4">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit fugiat deleniti et minima,
+                    voluptatum ipsa veniam. Officiis, laudantium? Obcaecati totam quibusdam nulla quam eaque sint hic
+                    voluptas.
+                </p>
+            </div>
+            <div class="col-lg-2">
+                <h5 class="footer_title text-white fw-bold mb-2">Important Link</h5>
+                <a href="#" class="text-decoration-none">Home Page</a>
+            </div>
+            <div class="col-lg-2"></div>
+            <div class="col-lg-4"></div>
         </div>
-        <div class="col-lg-2"></div>
-        <div class="col-lg-2"></div>
-        <div class="col-lg-4"></div>
-       </div>
     </div>
     <div class="container col-lg-11">
         <hr class="bg-secondary">
@@ -24,4 +32,4 @@
             </p>
         </div>
     </div>
-</div> 
+</div>
